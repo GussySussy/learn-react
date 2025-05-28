@@ -12,14 +12,14 @@
 .navbar-menu-item {
     height: 60px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     width: 285px;
     background-color: #03AEEE;
     border-radius: 100px 0% 0% 100px;
 }
 
-.employee-list-icon-container {
+.navbar-menu-item-icon {
     width: 30px;
     height: 30px;
     background-color: #fff;
@@ -27,4 +27,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 15px 15px 15px 15px;
+}
+
+.navbar-menu-item-text {
+    color: #fff;
 }
