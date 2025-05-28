@@ -1,20 +1,17 @@
 import "./Navbar.css";
 import empListIcon from "../../assets/icon.svg";
+import NavbarMenuItem from "./components/navbarMenuItem/NavbarMenuItem";
+import Button from "../button/Button";
 
 const Navbar = () => {
   return (
     <div className="navbar-container">
       <div className="navbar-menu-items">
-        <div className="navbar-menu-item employee-list">
-          <div className="employee-list-icon-container navbar-menu-item-icon">
-            <img src={empListIcon} />
-          </div>
-          <div className="navbar-menu-item-text employee-list-text">
-            Employee List
-          </div>
-        </div>
+        <NavbarMenuItem iconSrc={empListIcon} itemText="Employee List" />
       </div>
-      <div>Logout</div>
+      <div className="navbar-logout-button-container">
+        <Button buttonText="Logout" variant="logout" />
+      </div>
     </div>
   );
 };

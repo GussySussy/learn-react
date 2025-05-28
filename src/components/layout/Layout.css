@@ -1,8 +1,12 @@
 .page-container {
-    display: flex;
-    height: 100%;
+  display: flex;
+  height: calc(100% - 80px);
 }
 
 .layout-container {
-    height: 100%;
+  height: calc(100%);
+}
+
+.page-content {
+  width: calc(100% - 300px);
 }

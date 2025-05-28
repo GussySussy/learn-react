@@ -1,0 +1,24 @@
+.navbar-menu-item {
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 285px;
+    background-color: #03AEEE;
+    border-radius: 100px 0% 0% 100px;
+}
+
+.navbar-menu-item-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 100px 100px 100px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 15px 15px 15px;
+}
+
+.navbar-menu-item-text {
+    color: #fff;
+}
