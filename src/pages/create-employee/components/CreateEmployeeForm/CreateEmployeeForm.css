@@ -1,0 +1,33 @@
+.form-card {
+  padding: 30px 30px;
+  margin: 20px 20px;
+  height: fit-content;
+  /* width: fit-content; */
+  background-color: #fff;
+}
+
+.form-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 60px;
+}
+
+.form-fields > * {
+  width: 450px;
+}
+
+.address-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* .create-button {
+  background-color: #03aeee;
+  color: white;
+  border: none;
+} */
+
+.input--disabled {
+  background-color: #D1D1D1;
+}

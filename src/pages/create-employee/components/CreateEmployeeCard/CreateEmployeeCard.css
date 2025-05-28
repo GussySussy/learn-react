@@ -1,0 +1,14 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 300px);
+  background-color: #fafafa;
+  height: 100%;
+}
+
+.title-card {
+    margin: 20px 20px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+}

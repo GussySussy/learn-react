@@ -1,0 +1,60 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%
+}
+
+.whole {
+    display: flex;
+    height: 100vh;
+}
+
+.left-container {
+    width: 50%;
+    background: lightblue;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-frame {
+    background-color: white;
+    height: 750px;
+    width: 750px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.right-container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color: #03AEEE;
+}
+
+.kv-logo {
+    margin-bottom: 20px;
+    align-self: flex-start;
+}
+
+.login-image {
+    transform: scale(0.7);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
