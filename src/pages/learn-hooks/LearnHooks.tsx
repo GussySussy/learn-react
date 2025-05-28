@@ -7,11 +7,12 @@ const LearnHooks = () => {
 
   const handleGetSearchParams = () => {
     console.log(searchParams);
+    console.log(searchParams.get("hello"));
   };
 
   const handleSetSearchParams = () => {
     searchParams.set("hello", "jupiter");
-    setSearchParams(searchParams)
+    setSearchParams(searchParams);
   };
 
   return (
