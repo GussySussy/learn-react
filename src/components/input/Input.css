@@ -8,6 +8,10 @@
 .input--primary {
   padding: 15px;
   font-size: 14px;
+  color: #8B8D9D;
+  background-color: #FAFAFA;
+  border: solid #D9D9D9 1px;
+  border-radius: 10px;
 }
 
 .label {
