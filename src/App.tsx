@@ -1,12 +1,13 @@
 import {
   createBrowserRouter,
-  Navigate,
+  // Navigate,
   RouterProvider,
 } from "react-router-dom";
 import "./App.css";
 import Login from "./pages/login/Login";
 import Dashboard from "./pages/employees/dashboard/Dashboard";
 import CreateEmployee from "./pages/employees/createEmployee/CreateEmployee";
+import Layout from "./components/layout/Layout";
 // import CreateEmployee from "./pages/create-employee/CreateEmployee";
 // import Login from "./pages/login/Login";
 // import Layout from "./components/layout/Layout";
@@ -43,6 +44,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/employees",
+    element: <Layout />,
     children: [
       { index: true, element: <Dashboard /> },
       { path: "create", element: <CreateEmployee /> },

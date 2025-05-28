@@ -1,0 +1,17 @@
+.navbar-container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-menu-items {
+    margin-top: 25px;
+}
+
+.navbar-menu-item {
+    height: 60px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 285px;
+}

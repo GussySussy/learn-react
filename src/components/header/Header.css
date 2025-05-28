@@ -1,0 +1,23 @@
+.header {
+    height: 80px;
+}
+
+.header-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+}
+
+.kv-logo-container {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #E2E8FA;
+}
+
+.kv-logo-image{
+    width: 250px;
+    height: 50px;
+}
