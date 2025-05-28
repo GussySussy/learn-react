@@ -2,6 +2,7 @@
     width: 300px;
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
 }
 
 .navbar-menu-items {
@@ -14,4 +15,16 @@
     justify-content: flex-end;
     align-items: center;
     width: 285px;
+    background-color: #03AEEE;
+    border-radius: 100px 0% 0% 100px;
+}
+
+.employee-list-icon-container {
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 100px 100px 100px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
