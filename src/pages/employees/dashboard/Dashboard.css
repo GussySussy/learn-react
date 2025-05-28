@@ -3,9 +3,18 @@
   flex-direction: column;
   align-items: center;
   height: 100%;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 
 .title-card-container {
-  width: 95%;
+  width: 98%;
+  margin-top: 2%;
+}
+
+.body-container {
+    /* flex-shrink: 1; */
+    height: 83%;
+    width: 97%;
+    margin-top: 2%;
+    background-color: #fff;
 }
