@@ -1,0 +1,19 @@
+.select-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: fit-content;
+}
+
+.select--primary {
+  padding: 15px;
+  font-size: 14px;
+  color: #8b8d9d;
+  background-color: #fafafa;
+  border: solid #d9d9d9 1px;
+  border-radius: 10px;
+}
+
+.select-label {
+  font-size: 16px;
+}

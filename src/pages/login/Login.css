@@ -1,0 +1,36 @@
+.login-page-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.image-section {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(13, 137, 182,0.1);
+}
+
+.login-section {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container {
+    height:700px;
+    width: 700px;
+    border-radius: 50% 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-image {
+    transform: scale(70%);
+}

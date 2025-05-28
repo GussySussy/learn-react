@@ -1,7 +1,18 @@
-.button--logout{
-    color: white;
-    background-color: #ff3030;
-    padding: 15px;
-    border-radius: 20px;
-    margin-bottom: 20px;
+button {
+  padding: 15px;
+  border: none;
+}
+
+.button--logout {
+  color: white;
+  background-color: #ff3030;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.button--primary {
+  border-radius: 5px;
+  color: white;
+  background-color: #03aeee;
+  width: fit-content;
 }
