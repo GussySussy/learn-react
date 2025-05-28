@@ -9,6 +9,7 @@ import Login from "./pages/login/Login";
 import Layout from "./components/layout/Layout";
 import EmployeeDashboard from "./pages/employee-dashboard/EmployeeDashboard";
 import EmployeeDetails from "./pages/employeeDetails/EmployeeDetails";
+import LearnHooks from "./pages/learn-hooks/LearnHooks";
 
 export const isLoggedIn = () => {
   const token = localStorage.getItem("login");
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
       { path: "create", element: <CreateEmployee /> },
       { path: ":id", element: <EmployeeDetails /> },
     ],
+  },
+  {
+    path: "/test",
+    element: <LearnHooks />,
   },
 ]);
 
