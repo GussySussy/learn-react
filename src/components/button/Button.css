@@ -1,6 +1,7 @@
 button {
   padding: 15px;
   border: none;
+  cursor: pointer;
 }
 
 .button--logout {

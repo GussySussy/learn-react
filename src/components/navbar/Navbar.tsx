@@ -2,8 +2,16 @@ import "./Navbar.css";
 import empListIcon from "../../assets/icon.svg";
 import NavbarMenuItem from "./components/navbarMenuItem/NavbarMenuItem";
 import Button from "../button/Button";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.setItem("loggedIn", "false");
+    navigate("/");
+  };
+
   return (
     <div className="navbar-container">
       <div className="navbar-menu-items">
@@ -11,7 +19,7 @@ const Navbar = () => {
         <NavbarMenuItem iconSrc={empListIcon} itemText="Create Employee" />
       </div>
       <div className="navbar-logout-button-container">
-        <Button buttonText="Logout" variant="logout" />
+        <Button buttonText="Logout" variant="logout" onClick={handleLogout} />
       </div>
     </div>
   );

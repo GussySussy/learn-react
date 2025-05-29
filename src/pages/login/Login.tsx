@@ -4,13 +4,24 @@ import kvLogo from "../../assets/kv-logo.png";
 import Input from "../../components/input/Input";
 import Button from "../../components/button/Button";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
+export const isLoggedIn = () => {
+  return localStorage.getItem("loggedIn") == "true";
+};
 
 const Login = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const [Username, setUsername] = useState("");
+  const [Password, setPassword] = useState("");
 
   const handleLogin = () => {
-    navigate("/employees")
-  }
+    if (Username == "admin" && Password == "admin") {
+      localStorage.setItem("loggedIn", "true");
+      navigate("/employees")
+      // navigate(rel); //gotta add isLoggedIn() functionality
+    }
+  };
 
   return (
     <div className="login-page-container">
@@ -25,11 +36,21 @@ const Login = () => {
             <img src={kvLogo} className="kv-logo" />
           </div>
           <div className="login-form-fields">
-            <Input labelText="Username" placeholder="Enter Username" />
-            <Input labelText="Password" placeholder="Enter Password" />
+            <Input
+              labelText="Username"
+              placeholder="Enter Username"
+              value={Username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            <Input
+              labelText="Password"
+              placeholder="Enter Password"
+              value={Password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
           <div className="login-button-container">
-            <Button buttonText="Login" onClick={handleLogin}/>
+            <Button buttonText="Login" onClick={handleLogin} />
           </div>
         </div>
       </div>
