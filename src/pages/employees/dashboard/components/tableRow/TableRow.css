@@ -1,0 +1,37 @@
+.table-row {
+  justify-content: space-between;
+  background-color: white;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+
+.table-row > * {
+  width: 13%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+.status-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: red; */
+    width: 100px;
+    padding: 5px 10px;
+    border-radius: 50px 50px;
+}
+
+.status-container--Probation {
+background-color: #F5ECB8;
+}
+
+.status-container--Active {
+background-color: #D3F4BE;
+}
+
+.status-container--Inactive {
+background-color: #FFBFBF;
+}

@@ -40,8 +40,8 @@
 }
 
 .input-container,
-.select-container {
-  width: 470px;
+.select-container--primary {
+  width: 410px;
 }
 
 .address-fields {

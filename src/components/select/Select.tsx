@@ -17,14 +17,16 @@ const Select: React.FC<SelectProps> = ({
   ...props
 }) => {
   return (
-    <div className="select-container">
+    <div className={`select-container--${variant}`}>
       {labelText ? <div className="select-label">{labelText}</div> : null}
       <select
         className={`select--${variant} ${className}`}
         defaultValue="default"
         {...props}
       >
-        {defaultOption ? <option value="default">{defaultOption}</option> : null}
+        {defaultOption ? (
+          <option value="default">{defaultOption}</option>
+        ) : null}
         {options.map((option) => (
           <option>{option}</option>
         ))}

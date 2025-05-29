@@ -3,8 +3,15 @@ import loginImage from "../../assets/kv-login.jpeg";
 import kvLogo from "../../assets/kv-logo.png";
 import Input from "../../components/input/Input";
 import Button from "../../components/button/Button";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate()
+
+  const handleLogin = () => {
+    navigate("/employees")
+  }
+
   return (
     <div className="login-page-container">
       <div className="image-section">
@@ -22,7 +29,7 @@ const Login = () => {
             <Input labelText="Password" placeholder="Enter Password" />
           </div>
           <div className="login-button-container">
-            <Button buttonText="Login" />
+            <Button buttonText="Login" onClick={handleLogin}/>
           </div>
         </div>
       </div>

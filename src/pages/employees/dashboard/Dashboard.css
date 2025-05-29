@@ -11,10 +11,24 @@
   margin-top: 2%;
 }
 
-.body-container {
+.dashboard-body-container {
     /* flex-shrink: 1; */
     height: 83%;
     width: 97%;
     margin-top: 2%;
-    background-color: #fff;
+    background-color: #fafafa;
+}
+.employee-list-table-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+.employee-list-table {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; */
 }

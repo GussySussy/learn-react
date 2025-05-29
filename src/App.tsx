@@ -8,6 +8,7 @@ import Login from "./pages/login/Login";
 import Dashboard from "./pages/employees/dashboard/Dashboard";
 import CreateEmployee from "./pages/employees/createEmployee/CreateEmployee";
 import Layout from "./components/layout/Layout";
+import Details from "./pages/employees/details/Details";
 // import CreateEmployee from "./pages/create-employee/CreateEmployee";
 // import Login from "./pages/login/Login";
 // import Layout from "./components/layout/Layout";
@@ -52,6 +53,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Dashboard /> },
       { path: "create", element: <CreateEmployee /> },
+      { path: ":id", element: <Details /> },
     ],
   },
 ]);

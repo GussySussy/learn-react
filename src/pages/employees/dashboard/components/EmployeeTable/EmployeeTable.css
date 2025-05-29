@@ -1,0 +1,28 @@
+.employee-table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 2%;
+}
+
+.employee-table > * {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.table-header {
+  background-color: #EAF9FF;
+  padding: 25px;
+  justify-content: space-between;
+  border-radius: 20px;
+}
+
+.table-header > * {
+  width: 13%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: bold;
+}
+

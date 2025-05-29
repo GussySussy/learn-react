@@ -8,6 +8,7 @@ const Navbar = () => {
     <div className="navbar-container">
       <div className="navbar-menu-items">
         <NavbarMenuItem iconSrc={empListIcon} itemText="Employee List" />
+        <NavbarMenuItem iconSrc={empListIcon} itemText="Create Employee" />
       </div>
       <div className="navbar-logout-button-container">
         <Button buttonText="Logout" variant="logout" />

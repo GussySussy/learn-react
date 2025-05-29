@@ -1,12 +1,57 @@
 import React from "react";
 import "./TitleCard.css";
 
+import { LuPencil, LuPlus } from "react-icons/lu";
+import Select from "../select/Select";
+import { Status } from "../../pages/employees/dashboard/components/tableRow/TableRow";
+
 interface TitleCardProps {
   titleText: string;
+  editOption?: boolean;
+  filterOption?: boolean;
+  createOption?: boolean;
 }
 
-const TitleCard = ({ titleText }: TitleCardProps) => {
-  return <div className="title-card">{titleText}</div>;
+const TitleCard = ({
+  titleText,
+  filterOption,
+  editOption,
+  createOption,
+}: TitleCardProps) => {
+  return (
+    <div className="title-card">
+      <div className="title-card-text">{titleText}</div>
+      <div className="title-card-options">
+        {filterOption ? (
+          <div className="title-card-option-filter">
+            <div className="edit-option-text">Filter By</div>
+            <Select
+              variant="filter"
+              options={[Status.ACTIVE, Status.INACTIVE, Status.PROBATION]}
+              defaultOption="Status"
+              className="filter-select-container"
+            />
+          </div>
+        ) : null}
+        {editOption ? (
+          <div className="title-card-option-edit">
+            <div className="title-card-option-edit-icon-container option-icon-container">
+              <LuPencil />
+            </div>
+            <div className="edit-option-text">Edit</div>
+          </div>
+        ) : null}
+        {createOption ? (
+          <div className="title-card-option-create-employee">
+            <div className="title-card-option-create-employee-icon-container option-icon-container">
+              <LuPlus />
+            </div>
+            <div className="create-employee-option-text">Create Employee</div>
+          </div>
+        ) : null}
+      </div>
+    </div>
+  );
 };
 
 export default TitleCard;
