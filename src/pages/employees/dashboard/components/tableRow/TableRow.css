@@ -35,3 +35,9 @@ background-color: #D3F4BE;
 .status-container--Inactive {
 background-color: #FFBFBF;
 }
+
+.row-actions {
+  display: flex;
+  align-items: center;
+  gap: 20%;
+}

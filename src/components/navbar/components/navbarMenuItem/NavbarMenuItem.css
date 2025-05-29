@@ -6,6 +6,7 @@
     width: 285px;
     background-color: #03AEEE;
     border-radius: 100px 0% 0% 100px;
+    cursor: pointer;
 }
 
 .navbar-menu-item-icon {

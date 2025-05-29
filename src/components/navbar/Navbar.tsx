@@ -10,13 +10,22 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.setItem("loggedIn", "false");
     navigate("/");
+    // navigate(0);
   };
 
   return (
     <div className="navbar-container">
       <div className="navbar-menu-items">
-        <NavbarMenuItem iconSrc={empListIcon} itemText="Employee List" />
-        <NavbarMenuItem iconSrc={empListIcon} itemText="Create Employee" />
+        <NavbarMenuItem
+          iconSrc={empListIcon}
+          itemText="Employee List"
+          path="/employees"
+        />
+        <NavbarMenuItem
+          iconSrc={empListIcon}
+          itemText="Create Employee"
+          path="/employees/create"
+        />
       </div>
       <div className="navbar-logout-button-container">
         <Button buttonText="Logout" variant="logout" onClick={handleLogout} />

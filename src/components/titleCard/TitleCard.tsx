@@ -4,6 +4,7 @@ import "./TitleCard.css";
 import { LuPencil, LuPlus } from "react-icons/lu";
 import Select from "../select/Select";
 import { Status } from "../../pages/employees/dashboard/components/tableRow/TableRow";
+import { useNavigate } from "react-router-dom";
 
 interface TitleCardProps {
   titleText: string;
@@ -18,6 +19,16 @@ const TitleCard = ({
   editOption,
   createOption,
 }: TitleCardProps) => {
+  const navigate = useNavigate();
+
+  const handleCreateEmployee = () => {
+    navigate("/employees/create");
+  };
+
+  const handleEditEmployee = () => {
+    
+  }
+
   return (
     <div className="title-card">
       <div className="title-card-text">{titleText}</div>
@@ -46,7 +57,12 @@ const TitleCard = ({
             <div className="title-card-option-create-employee-icon-container option-icon-container">
               <LuPlus />
             </div>
-            <div className="create-employee-option-text">Create Employee</div>
+            <div
+              className="create-employee-option-text"
+              onClick={handleCreateEmployee}
+            >
+              Create Employee
+            </div>
           </div>
         ) : null}
       </div>

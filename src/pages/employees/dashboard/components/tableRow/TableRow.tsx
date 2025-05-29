@@ -1,5 +1,7 @@
 import React from "react";
 import "./TableRow.css";
+import { LuPencil, LuTrash } from "react-icons/lu";
+import { useNavigate } from "react-router-dom";
 
 export enum Status {
   ACTIVE = "Active",
@@ -22,6 +24,16 @@ interface TableRowProps {
 }
 
 const TableRow = ({ variant = "primary", employeeList }: TableRowProps) => {
+  const navigate = useNavigate();
+
+  const handleEdit = (empId: string) => {
+    navigate(`edit/${empId}`);
+  };
+
+  const handleDelete = (empId: string) => {
+    navigate(`delete/${empId}`);
+  };
+
   return employeeList.map((row) => (
     <div className={`table-row table-row--${variant}`}>
       <div className="row-employee-name">{row.employeeName}</div>
@@ -34,7 +46,14 @@ const TableRow = ({ variant = "primary", employeeList }: TableRowProps) => {
         </div>
       </div>
       <div className="row-experience">{row.Experience}</div>
-      <div className="row-actions">Actions</div>
+      <div className="row-actions">
+        <LuPencil size={22} onClick={() => handleEdit(row.employeeID)} />
+        <LuTrash
+          size={22}
+          color="red"
+          onClick={() => handleDelete(row.employeeID)}
+        />
+      </div>
     </div>
   ));
 };

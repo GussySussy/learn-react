@@ -18,8 +18,8 @@ const Login = () => {
   const handleLogin = () => {
     if (Username == "admin" && Password == "admin") {
       localStorage.setItem("loggedIn", "true");
-      navigate("/employees")
-      // navigate(rel); //gotta add isLoggedIn() functionality
+      navigate("/employees");
+      // navigate(0);
     }
   };
 
