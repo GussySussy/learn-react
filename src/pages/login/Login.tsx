@@ -44,6 +44,7 @@ const Login = () => {
               // clearButton
             />
             <Input
+              type="password"
               labelText="Password"
               placeholder="Enter Password"
               value={Password}

@@ -47,12 +47,12 @@ const EmployeeForm = ({
           value={values.employeeName}
           onChange={(e) => onChange("employeeName", e.target.value)}
         />
-        <Input
+        {/* <Input
           labelText="Username"
           placeholder="Enter Username"
           value={values.username}
           onChange={(e) => onChange("username", e.target.value)}
-        />
+        /> */}
         <Input
           labelText="Email"
           placeholder="Enter Email"
@@ -79,6 +79,7 @@ const EmployeeForm = ({
           value={values.experience}
           onChange={(e) => onChange("experience", e.target.value)}
         />
+
         <Select
           labelText="Department"
           defaultOption="Choose Department"
@@ -92,6 +93,14 @@ const EmployeeForm = ({
           options={["UI", "Developer", "UX", "HR"]}
           value={values.role}
           onChange={(e) => onChange("role", e.target.value)}
+        />
+
+        <Select
+          labelText="Status"
+          defaultOption="Choose Status"
+          options={["ACTIVE", "INACTIVE", "PROBATION"]}
+          value={values.status}
+          onChange={(e) => onChange("status", e.target.value)}
         />
         <div className="address-container">
           <div className="address-fields">
@@ -118,14 +127,11 @@ const EmployeeForm = ({
             />
           </div>
         </div>
-        <Select
-          labelText="Status"
-          defaultOption="Choose Status"
-          options={["ACTIVE", "INACTIVE", "PROBATION"]}
-          value={values.status}
-          onChange={(e) => onChange("status", e.target.value)}
+        <Button
+          buttonText={buttonText}
+          variant="create"
+          onClick={() => console.log(values)}
         />
-        <Button buttonText={buttonText} variant="create" />
       </div>
     </div>
   );

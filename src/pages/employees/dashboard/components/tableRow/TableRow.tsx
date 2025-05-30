@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./TableRow.css";
 import { LuInfo, LuPencil, LuTrash } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
-import DeleteConfirmWindow from "../deleteConfirmWindow/DeleteConfirmWindow";
 
 export enum Status {
   ACTIVE = "Active",
@@ -50,7 +49,11 @@ const TableRow = ({
     <>
       {employeeList.map((row) =>
         row.Status == filter || !filter ? (
-          <div className={`table-row table-row--${variant}`}>
+          <div
+            className={`table-row table-row--${variant}`}
+            onClick={() => handleInfo(row.employeeID)}
+            style={{ cursor: "pointer" }}
+          >
             <div className="row-employee-name">{row.employeeName}</div>
             <div className="row-employee-id">{row.employeeID}</div>
             <div className="row-joining-date">{row.JoiningDate}</div>
@@ -66,21 +69,27 @@ const TableRow = ({
             <div className="row-actions">
               <LuPencil
                 size={22}
-                onClick={() => handleEdit(row.employeeID)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleEdit(row.employeeID);
+                }}
                 style={{ cursor: "pointer" }}
               />
               <LuTrash
                 size={22}
                 color="red"
-                onClick={() => handleDelete(row.employeeID)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleDelete(row.employeeID);
+                }}
                 style={{ cursor: "pointer" }}
               />
-              <LuInfo
+              {/* <LuInfo
                 size={22}
                 color="#03AEEE"
                 onClick={() => handleInfo(row.employeeID)}
                 style={{ cursor: "pointer" }}
-              />
+              /> */}
             </div>
           </div>
         ) : null
