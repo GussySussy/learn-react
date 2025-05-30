@@ -4,8 +4,9 @@ import TableRow, {
   Status,
   type EmployeeRowDetails,
 } from "../tableRow/TableRow";
+import { useSearchParams } from "react-router-dom";
 
-const dummyEmployeeList: EmployeeRowDetails[] = [
+export const dummyEmployeeList: EmployeeRowDetails[] = [
   {
     employeeName: "Alice Johnson",
     employeeID: "EMP001",
@@ -48,7 +49,18 @@ const dummyEmployeeList: EmployeeRowDetails[] = [
   },
 ];
 
-const EmployeeTable = () => {
+const EmployeeTable = ({
+  confirmDelete,
+}: {
+  confirmDelete: (empId: string) => void;
+}) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  // const handleSetStatusFilter = () => {
+  //   const filter = searchParams.get("status");
+  //   return filter ? filter;
+  // };
+
   return (
     <div className="employee-table">
       <div className="table-header">
@@ -60,7 +72,11 @@ const EmployeeTable = () => {
         <div>Experience</div>
         <div>Actions</div>
       </div>
-      <TableRow employeeList={dummyEmployeeList} />
+      <TableRow
+        employeeList={dummyEmployeeList}
+        filter={searchParams.get("status")}
+        confirmDelete={confirmDelete}
+      />
     </div>
   );
 };

@@ -5,6 +5,7 @@ import { LuPencil, LuPlus } from "react-icons/lu";
 import Select from "../select/Select";
 import { Status } from "../../pages/employees/dashboard/components/tableRow/TableRow";
 import { useNavigate } from "react-router-dom";
+import FilterSearchButton from "./components/FilterSearchButton";
 
 interface TitleCardProps {
   titleText: string;
@@ -25,31 +26,25 @@ const TitleCard = ({
     navigate("/employees/create");
   };
 
-  const handleEditEmployee = () => {
-    
-  }
+  const handleEditEmployee = () => {};
 
   return (
     <div className="title-card">
       <div className="title-card-text">{titleText}</div>
       <div className="title-card-options">
         {filterOption ? (
-          <div className="title-card-option-filter">
-            <div className="edit-option-text">Filter By</div>
-            <Select
-              variant="filter"
-              options={[Status.ACTIVE, Status.INACTIVE, Status.PROBATION]}
-              defaultOption="Status"
-              className="filter-select-container"
-            />
-          </div>
+          <FilterSearchButton
+            options={[Status.ACTIVE, Status.INACTIVE, Status.PROBATION]}
+            defaultOption="Status"
+            variant="filter"
+          />
         ) : null}
         {editOption ? (
           <div className="title-card-option-edit">
             <div className="title-card-option-edit-icon-container option-icon-container">
               <LuPencil />
             </div>
-            <div className="edit-option-text">Edit</div>
+            <div className="edit-option-text option-text">Edit</div>
           </div>
         ) : null}
         {createOption ? (
@@ -58,7 +53,7 @@ const TitleCard = ({
               <LuPlus />
             </div>
             <div
-              className="create-employee-option-text"
+              className="create-employee-option-text option-text"
               onClick={handleCreateEmployee}
             >
               Create Employee

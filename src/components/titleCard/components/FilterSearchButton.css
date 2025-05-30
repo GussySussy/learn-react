@@ -1,0 +1,11 @@
+.title-card-option-filter {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  /* background-color: #f0f0f0; */
+  gap: 10px;
+  border-radius: 50px;
+  font-weight: 500;
+  /* cursor: pointer; */
+  /* transition: background-color 0.2s ease; */
+}

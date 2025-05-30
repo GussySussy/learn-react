@@ -15,7 +15,10 @@ import EditEmployee from "./pages/employees/editEmployee/EditEmployee";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: isLoggedIn() ? <Navigate to="/employees" /> : <Login />,
+    element: 
+    // isLoggedIn() ? <Navigate to="/employees" /> 
+    // :
+     <Login />,
   },
   {
     path: "/login",
@@ -32,6 +35,7 @@ const router = createBrowserRouter([
       { path: "delete/:id", element: <EditEmployee /> }
     ],
   },
+  
 ]);
 
 function App() {

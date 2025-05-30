@@ -41,12 +41,14 @@ const Login = () => {
               placeholder="Enter Username"
               value={Username}
               onChange={(e) => setUsername(e.target.value)}
+              // clearButton
             />
             <Input
               labelText="Password"
               placeholder="Enter Password"
               value={Password}
               onChange={(e) => setPassword(e.target.value)}
+              // clearButton
             />
           </div>
           <div className="login-button-container">

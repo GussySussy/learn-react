@@ -1,0 +1,14 @@
+.info-field-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: fit-content;
+}
+
+.info-field-label {
+    font-size: 22px;
+}
+
+.info-field-value {
+
+}

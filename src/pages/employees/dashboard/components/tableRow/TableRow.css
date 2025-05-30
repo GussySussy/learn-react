@@ -3,6 +3,12 @@
   background-color: white;
   padding: 25px;
   border-radius: 20px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.table-row:hover {
+  background-color: rgb(243, 243, 243);
+  transform: scale(101%);
 }
 
 
@@ -39,5 +45,10 @@ background-color: #FFBFBF;
 .row-actions {
   display: flex;
   align-items: center;
-  gap: 20%;
+  gap: 10%;
+}
+
+.row-actions > *:hover {
+  transform: scale(120%);
+  transition: transform 0.1s ease;
 }

@@ -1,0 +1,26 @@
+.form-container {
+  width: 95%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.form-fields {
+  display: flex;
+  height: fit-content;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 30px 2%;
+}
+
+.input-container,
+.select-container--primary {
+  width: 500px;
+}
+
+.address-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
