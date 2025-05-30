@@ -40,7 +40,7 @@ const CreateEmployee = () => {
         <TitleCard titleText="Create Employee" />
       </div>
       <div className="body-container">
-        <EmployeeForm values={values} onChange={handleChange} />
+        <EmployeeForm values={values} onChange={handleChange} buttonText="Create" />
       </div>
     </div>
   );

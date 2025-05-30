@@ -25,8 +25,10 @@ interface EmployeeValues {
 const EmployeeForm = ({
   values,
   onChange,
+  buttonText,
 }: {
   values: EmployeeValues;
+  buttonText: string;
   onChange: (field: string, value: string) => void;
 }) => {
   return (
@@ -123,7 +125,7 @@ const EmployeeForm = ({
           value={values.status}
           onChange={(e) => onChange("status", e.target.value)}
         />
-        <Button buttonText="Create" variant="create" />
+        <Button buttonText={buttonText} variant="create" />
       </div>
     </div>
   );
