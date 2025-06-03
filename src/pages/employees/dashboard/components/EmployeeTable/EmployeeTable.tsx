@@ -1,60 +1,22 @@
 import React from "react";
 import "./EmployeeTable.css";
-import TableRow, {
-  Status,
-  type EmployeeRowDetails,
-} from "../tableRow/TableRow";
+import TableRow, { Status } from "../tableRow/TableRow";
 import { useSearchParams } from "react-router-dom";
-
-export const dummyEmployeeList: EmployeeRowDetails[] = [
-  {
-    employeeName: "Alice Johnson",
-    employeeID: "EMP001",
-    JoiningDate: "2022-03-15",
-    Role: "Software Engineer",
-    Status: Status.ACTIVE,
-    Experience: "3 years",
-  },
-  {
-    employeeName: "Bob Smith",
-    employeeID: "EMP002",
-    JoiningDate: "2021-07-01",
-    Role: "Product Manager",
-    Status: Status.PROBATION,
-    Experience: "5 years",
-  },
-  {
-    employeeName: "Clara Davis",
-    employeeID: "EMP003",
-    JoiningDate: "2019-11-20",
-    Role: "UX Designer",
-    Status: Status.INACTIVE,
-    Experience: "6 years",
-  },
-  {
-    employeeName: "David Lee",
-    employeeID: "EMP004",
-    JoiningDate: "2023-01-10",
-    Role: "DevOps Engineer",
-    Status: Status.ACTIVE,
-    Experience: "2 years",
-  },
-  {
-    employeeName: "Emma Wilson",
-    employeeID: "EMP005",
-    JoiningDate: "2020-06-05",
-    Role: "QA Analyst",
-    Status: Status.ACTIVE,
-    Experience: "4 years",
-  },
-];
+import type { Employee } from "../../../../../store/employee/employee.types";
+import { useGetEmployeeListQuery } from "../../../../../api-service/employees/employees.api";
 
 const EmployeeTable = ({
   confirmDelete,
 }: {
-  confirmDelete: (empId: string) => void;
+  confirmDelete: (empId: number) => void;
 }) => {
   const [searchParams, setSearchParams] = useSearchParams();
+  const { data } = useGetEmployeeListQuery();
+  console.log(data);
+  // const state = useAppSelector((state) => state);
+  // console.log(state);
+  // let employeeList = state.employee.employees;
+  // console.log(employeeList);
 
   // const handleSetStatusFilter = () => {
   //   const filter = searchParams.get("status");
@@ -73,7 +35,7 @@ const EmployeeTable = ({
         <div>Actions</div>
       </div>
       <TableRow
-        employeeList={dummyEmployeeList}
+        employeeList={data}
         filter={searchParams.get("status")}
         confirmDelete={confirmDelete}
       />

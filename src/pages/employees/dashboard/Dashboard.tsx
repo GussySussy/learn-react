@@ -4,20 +4,30 @@ import "./Dashboard.css";
 import EmployeeTable from "./components/EmployeeTable/EmployeeTable";
 import DeleteConfirmWindow from "./components/deleteConfirmWindow/DeleteConfirmWindow";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { EMPLOYEE_ACTION_TYPES } from "../../../store/employee/employee.types";
+import { useDeleteEmployeebyIdMutation } from "../../../api-service/employees/employees.api";
 
 const Dashboard = () => {
   const [deleteWindowToggle, setDeleteWindowToggle] = useState(false);
-  const [selectedEmpId, setSelectedEmpId] = useState<string | null>(null);
+  const [selectedEmpId, setSelectedEmpId] = useState<number | null>(null);
+  const [deleteEmployee] = useDeleteEmployeebyIdMutation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const handleConfirmDelete = (empId: string) => {
+  const handleConfirmDelete = (empId: number) => {
     setSelectedEmpId(empId);
     setDeleteWindowToggle(true);
   };
 
   const handleDelete = () => {
-    navigate(`delete/${selectedEmpId}`);
+    // dispatch({ type: EMPLOYEE_ACTION_TYPES.DELETE, payload: selectedEmpId });
+    // navigate(`delete/${selectedEmpId}`);
     console.log("Deleted employee:", selectedEmpId);
+    deleteEmployee(selectedEmpId!)
+      .unwrap()
+      .then((res) => console.log(res))
+      .catch((err) => console.error(err));
     setDeleteWindowToggle(false);
     setSelectedEmpId(null);
   };

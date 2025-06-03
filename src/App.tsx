@@ -7,6 +7,8 @@ import Layout from "./components/layout/Layout";
 import NotFound from "./pages/notFound/NotFound";
 import { lazy, Suspense } from "react";
 import LoadingScreen from "./pages/loadingScreen/LoadingScreen";
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 const Dashboard = lazy(() => import("./pages/employees/dashboard/Dashboard"));
 const Details = lazy(() => import("./pages/employees/details/Details"));
@@ -51,7 +53,9 @@ function App() {
   return (
     <>
       <Suspense fallback={<LoadingScreen />}>
-        <RouterProvider router={router} />
+        <Provider store={store}>
+          <RouterProvider router={router} />
+        </Provider>
       </Suspense>
     </>
   );

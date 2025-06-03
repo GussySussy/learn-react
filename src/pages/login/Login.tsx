@@ -5,22 +5,29 @@ import Input from "../../components/input/Input";
 import Button from "../../components/button/Button";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useLoginMutation } from "../../api-service/auth/login.api";
 
 export const isLoggedIn = () => {
-  return localStorage.getItem("loggedIn") == "true";
+  return localStorage.getItem("token");
 };
 
 const Login = () => {
   const navigate = useNavigate();
-  const [Username, setUsername] = useState("");
-  const [Password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [login, { isLoading }] = useLoginMutation();
 
-  const handleLogin = () => {
-    if (Username == "admin" && Password == "admin") {
-      localStorage.setItem("loggedIn", "true");
-      navigate("/employees");
-      // navigate(0);
-    }
+  const handleLogin = async () => {
+    const response = await login({ email: email, password: password })
+      .unwrap()
+      .then((response) => {
+        localStorage.setItem("token", response.data?.accessToken);
+        console.log(response);
+        navigate("/employees");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
@@ -37,23 +44,27 @@ const Login = () => {
           </div>
           <div className="login-form-fields">
             <Input
-              labelText="Username"
-              placeholder="Enter Username"
-              value={Username}
-              onChange={(e) => setUsername(e.target.value)}
+              labelText="Email"
+              placeholder="Enter Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               // clearButton
             />
             <Input
               type="password"
               labelText="Password"
               placeholder="Enter Password"
-              value={Password}
+              value={password}
               onChange={(e) => setPassword(e.target.value)}
               // clearButton
             />
           </div>
           <div className="login-button-container">
-            <Button buttonText="Login" onClick={handleLogin} />
+            <Button
+              buttonText="Login"
+              onClick={handleLogin}
+              disabled={isLoading}
+            />
           </div>
         </div>
       </div>

@@ -2,14 +2,14 @@ import React from "react";
 import "./InfoField.css";
 
 interface InfoFieldProps {
-  labelText: string;
-  value: string;
+  labelText?: string;
+  value: string | number;
 }
 
 const InfoField = ({ labelText, value }: InfoFieldProps) => {
   return (
     <div className={`info-field-container`}>
-      <div className="info-field-label">{labelText}</div>
+      {labelText ? <div className="info-field-label">{labelText}</div> : null}
       <div className="info-field-value">{value}</div>
       {/* <input className={`input--${variant} ${className}`} {...props} /> */}
     </div>

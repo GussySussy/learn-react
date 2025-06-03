@@ -30,15 +30,15 @@
     border-radius: 50px 50px;
 }
 
-.status-container--Probation {
+.status-container--PROBATION {
 background-color: #F5ECB8;
 }
 
-.status-container--Active {
+.status-container--ACTIVE {
 background-color: #D3F4BE;
 }
 
-.status-container--Inactive {
+.status-container--INACTIVE {
 background-color: #FFBFBF;
 }
 

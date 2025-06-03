@@ -3,9 +3,9 @@ import "./TitleCard.css";
 
 import { LuPencil, LuPlus } from "react-icons/lu";
 import Select from "../select/Select";
-import { Status } from "../../pages/employees/dashboard/components/tableRow/TableRow";
 import { useNavigate } from "react-router-dom";
 import FilterSearchButton from "./components/FilterSearchButton";
+import { EmployeeStatus } from "../../store/employee/employee.types";
 
 interface TitleCardProps {
   titleText: string;
@@ -25,7 +25,6 @@ const TitleCard = ({
   const handleCreateEmployee = () => {
     navigate("/employees/create");
   };
-
   const handleEditEmployee = () => {};
 
   return (
@@ -34,7 +33,11 @@ const TitleCard = ({
       <div className="title-card-options">
         {filterOption ? (
           <FilterSearchButton
-            options={[Status.ACTIVE, Status.INACTIVE, Status.PROBATION]}
+            options={[
+              { name: EmployeeStatus.ACTIVE },
+              { name: EmployeeStatus.INACTIVE },
+              { name: EmployeeStatus.PROBATION },
+            ]}
             defaultOption="Status"
             variant="filter"
           />

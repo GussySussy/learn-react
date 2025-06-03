@@ -2,12 +2,16 @@ import "./DeleteConfirmWindow.css";
 import Button from "../../../../../components/button/Button";
 
 interface DeleteConfirmWindowProps {
-  empId: string;
+  empId: number;
   onConfirm: () => void;
   onCancel: () => void;
 }
 
-const DeleteConfirmWindow = ({ empId, onConfirm, onCancel }: DeleteConfirmWindowProps) => {
+const DeleteConfirmWindow = ({
+  empId,
+  onConfirm,
+  onCancel,
+}: DeleteConfirmWindowProps) => {
   return (
     <div className="modal-overlay">
       <div className="delete-confirm-popup-container">

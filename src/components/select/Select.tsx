@@ -1,10 +1,11 @@
 import React from "react";
 import "./Select.css";
 
-export interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+export interface SelectProps
+  extends React.SelectHTMLAttributes<HTMLSelectElement> {
   variant?: string;
   labelText?: string;
-  options: string[];
+  options: { value?: number; name: string }[];
   defaultOption?: string;
 }
 
@@ -28,7 +29,9 @@ const Select: React.FC<SelectProps> = ({
           <option value="default">{defaultOption}</option>
         ) : null}
         {options.map((option) => (
-          <option>{option}</option>
+          <option value={option.value ? option.value : option.name}>
+            {option.name}
+          </option>
         ))}
       </select>
     </div>
