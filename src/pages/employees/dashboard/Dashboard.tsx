@@ -5,7 +5,6 @@ import EmployeeTable from "./components/EmployeeTable/EmployeeTable";
 import DeleteConfirmWindow from "./components/deleteConfirmWindow/DeleteConfirmWindow";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { EMPLOYEE_ACTION_TYPES } from "../../../store/employee/employee.types";
 import { useDeleteEmployeebyIdMutation } from "../../../api-service/employees/employees.api";
 
 const Dashboard = () => {

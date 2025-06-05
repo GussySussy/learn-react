@@ -44,11 +44,10 @@ const Login = () => {
           </div>
           <div className="login-form-fields">
             <Input
-              labelText="Email"
+              labelText="Username"
               placeholder="Enter Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              // clearButton
             />
             <Input
               type="password"
@@ -59,8 +58,15 @@ const Login = () => {
               // clearButton
             />
           </div>
+          {email.length > 30 || password.length > 30? (
+            <div className="login-input-error-message ">
+              Invalid Email and Password
+            </div>
+          ) : null}
           <div className="login-button-container">
             <Button
+              type="submit"
+              name="login"
               buttonText="Login"
               onClick={handleLogin}
               disabled={isLoading}

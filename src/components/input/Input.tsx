@@ -14,9 +14,12 @@ const Input: React.FC<InputProps> = ({
 }) => {
   return (
     <div className={`input-container input-container--${variant}`}>
-      {labelText ? <div className="input-label">{labelText}</div> : null}
-      {/* <div className="input--clear-container  "></div> */}
-      <input className={`input--${variant} ${className}`} {...props} />
+      {labelText ? <label className="input-label">{labelText}</label> : null}
+      <input
+        className={`input--${variant} ${className}`}
+        {...props}
+        aria-label={labelText ? labelText : ""}
+      />
     </div>
   );
 };

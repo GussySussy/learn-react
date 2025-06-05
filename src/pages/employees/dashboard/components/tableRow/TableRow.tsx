@@ -48,7 +48,9 @@ const TableRow = ({
           >
             <div className="row-employee-name">{row.name}</div>
             <div className="row-employee-id">{row.employeeId}</div>
-            <div className="row-joining-date">{new Date(row.dateOfJoining).toDateString()}</div>
+            <div className="row-joining-date">
+              {row.dateOfJoining.slice(0, 10)}
+            </div>
             <div className="row-role">{row.role}</div>
             <div className="row-status ">
               <div

@@ -11,7 +11,6 @@
   transform: scale(101%);
 }
 
-
 .table-row > * {
   width: 13%;
   display: flex;
@@ -19,27 +18,26 @@
   justify-content: flex-start;
 }
 
-
 .status-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background: red; */
-    width: 100px;
-    padding: 5px 10px;
-    border-radius: 50px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: red; */
+  width: 120px;
+  padding: 5px 10px;
+  border-radius: 50px 50px;
 }
 
 .status-container--PROBATION {
-background-color: #F5ECB8;
+  background-color: #f5ecb8;
 }
 
 .status-container--ACTIVE {
-background-color: #D3F4BE;
+  background-color: #d3f4be;
 }
 
 .status-container--INACTIVE {
-background-color: #FFBFBF;
+  background-color: #ffbfbf;
 }
 
 .row-actions {
