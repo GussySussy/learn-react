@@ -1,4 +1,4 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import Header from "../header/Header";
 import Navbar from "../navbar/Navbar";
 import "./Layout.css";
@@ -6,8 +6,11 @@ import { isLoggedIn } from "../../pages/login/Login";
 
 const Layout = () => {
   const navigate = useNavigate();
-
-  if (!isLoggedIn()) navigate("/");
+  const token = isLoggedIn();
+  console.log(`token : `, token);
+  if (!token) {
+    return <Navigate to="/login" replace />;
+  }
 
   return (
     <div className="layout-container">

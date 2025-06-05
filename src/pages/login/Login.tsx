@@ -8,7 +8,9 @@ import { useState } from "react";
 import { useLoginMutation } from "../../api-service/auth/login.api";
 
 export const isLoggedIn = () => {
-  return localStorage.getItem("token");
+  const token = localStorage.getItem("token");
+  console.log(token);
+  return token;
 };
 
 const Login = () => {
@@ -21,7 +23,7 @@ const Login = () => {
     const response = await login({ email: email, password: password })
       .unwrap()
       .then((response) => {
-        localStorage.setItem("token", response.data?.accessToken);
+        localStorage.setItem("token", response.accessToken);
         console.log(response);
         navigate("/employees");
       })
@@ -58,7 +60,7 @@ const Login = () => {
               // clearButton
             />
           </div>
-          {email.length > 30 || password.length > 30? (
+          {email.length > 30 || password.length > 30 ? (
             <div className="login-input-error-message ">
               Invalid Email and Password
             </div>
