@@ -41,22 +41,16 @@ const EditEmployee = () => {
                 value={employee?.department.name}
               />
               <InfoField labelText="Role" value={employee?.role} />
+              <InfoField labelText="Status" value={employee.status} />
               <div>
                 <InfoField
                   labelText="Address"
                   value={employee?.address.houseNo}
                 />
-                <InfoField
-                  value={employee?.address.line1}
-                />
-                <InfoField
-                  value={employee?.address.line2}
-                />
-                <InfoField
-                  value={employee?.address.pincode}
-                />
+                <InfoField value={employee?.address.line1} />
+                <InfoField value={employee?.address.line2} />
+                <InfoField value={employee?.address.pincode} />
               </div>
-              <InfoField labelText="Status" value={employee.status} />
             </div>
           ) : null}
           {/* <Button buttonText="Create" /> */}
