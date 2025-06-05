@@ -23,7 +23,7 @@ interface FormEmployee {
   line1: string;
   line2: string;
   pincode: string;
-  password: string;
+  // password: string;
   role: Role;
   dateOfJoining: string;
   experience: number;
@@ -42,7 +42,7 @@ const reformatEmployee = (employee: Employee): FormEmployee => {
     line1: employee.address.line1,
     line2: employee.address.line2,
     pincode: employee.address.pincode,
-    password: employee.password,
+    // password: employee.password,
     role: employee.role,
     dateOfJoining: employee.dateOfJoining,
     experience: employee.experience,
@@ -115,6 +115,7 @@ const EditEmployee = () => {
                 onChange={handleChange}
                 handleSubmit={handleSubmit}
                 buttonText="Update"
+                removePassword
               />
             </div>
           </div>

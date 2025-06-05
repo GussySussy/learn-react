@@ -27,10 +27,10 @@ const EditEmployee = () => {
               <InfoField labelText="Employee ID" value={employee.employeeId} />
               <InfoField labelText="Employee Name" value={employee.name} />
               <InfoField labelText="Email" value={employee.email} />
-              <InfoField
+              {/* <InfoField
                 labelText="Password"
                 value={employee.password.slice(0, 10)}
-              />
+              /> */}
               <InfoField
                 labelText="Joining Date"
                 value={employee?.dateOfJoining.slice(0, 10)}

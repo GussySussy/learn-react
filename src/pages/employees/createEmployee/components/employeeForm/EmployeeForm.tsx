@@ -11,7 +11,7 @@ import { useGetDepartmentListQuery } from "../../../../../api-service/department
 interface EmployeeValues {
   employeeId: string;
   name: string;
-  password: string;
+  password?: string;
   email: string;
   dateOfJoining: string;
   experience: number;
@@ -31,12 +31,14 @@ const EmployeeForm = ({
   buttonText,
   handleSubmit,
   disableEmployeeId,
+  removePassword,
 }: {
   values: EmployeeValues | undefined;
   buttonText: string;
   onChange: (field: string, value: string | number) => void;
   handleSubmit: () => void;
   disableEmployeeId?: boolean;
+  removePassword?: boolean;
 }) => {
   const { data: getDepartments } = useGetDepartmentListQuery();
   console.log(getDepartments);
@@ -72,14 +74,16 @@ const EmployeeForm = ({
           onChange={(e) => onChange("email", e.target.value)}
           required
         />
-        <Input
-          labelText="Password"
-          placeholder="Enter Password"
-          type="password"
-          value={values?.password}
-          onChange={(e) => onChange("password", e.target.value)}
-          required
-        />
+        {!removePassword ? (
+          <Input
+            labelText="Password"
+            placeholder="Enter Password"
+            type="password"
+            value={values?.password}
+            onChange={(e) => onChange("password", e.target.value)}
+            required
+          />
+        ) : null}
         <Input
           labelText="Joining Date"
           type="date"
