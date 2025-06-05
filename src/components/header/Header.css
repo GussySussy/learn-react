@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: row;
     /* align-items: center; */
+    justify-content: space-between;
 }
 
 .kv-logo-container {
@@ -22,3 +23,10 @@
     width: 250px;
     height: 50px;
 }
+
+.profile-button-container {
+    align-self: center;
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+}  

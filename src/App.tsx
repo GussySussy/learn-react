@@ -13,6 +13,7 @@ import { lazy, Suspense } from "react";
 import LoadingScreen from "./pages/loadingScreen/LoadingScreen";
 import { Provider } from "react-redux";
 import store from "./store/store";
+import Profile from "./pages/profile/Profile";
 
 const Dashboard = lazy(() => import("./pages/employees/dashboard/Dashboard"));
 const Details = lazy(() => import("./pages/employees/details/Details"));
@@ -40,7 +41,8 @@ const router = createBrowserRouter([
       { path: "create", element: <CreateEmployee /> },
       { path: ":id", element: <Details /> },
       { path: "edit/:id", element: <EditEmployee /> },
-      { path: "delete/:id", element: <EditEmployee /> },
+      // { path: "delete/:id", element: <EditEmployee /> },
+      { path: "profile", element: <Profile /> },
     ],
   },
   {

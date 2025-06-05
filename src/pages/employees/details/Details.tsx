@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import TitleCard from "../../../components/titleCard/TitleCard";
 import InfoField from "./components/InfoField";
 import "./Details.css";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { useGetEmployeeByIdQuery } from "../../../api-service/employees/employees.api";
 
 const EditEmployee = () => {
